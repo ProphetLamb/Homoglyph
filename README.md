@@ -17,6 +17,14 @@ Console.WriteLine(codepoints.Contains(' ') ? "Yay" : "Nope");
 
 ## [API documentation](./doc/Homoglyph/index.md)
 
+## Continuous Integration
+
+| Build                                                                                                                                                                                           | Test                                                                                                                                                                    | Coverage                                                                                                                                                                                |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <sup>Appveyor</sup> [![Build status](https://ci.appveyor.com/api/projects/status/8xi6uuuur1y5qup8/branch/master?svg=true)](https://ci.appveyor.com/project/ProphetLamb/homoglyph/branch/master) | <sup>Appveyor</sup> [![AppVeyor tests](https://img.shields.io/appveyor/tests/ProphetLamb/homoglyph)](https://ci.appveyor.com/project/ProphetLamb/homoglyph/build/tests) | <sup>Coveralls</sup> [![Coverage Status](https://coveralls.io/repos/github/ProphetLamb/homoglyph/badge.svg?branch=HEAD)](https://coveralls.io/github/ProphetLamb/homoglyph?branch=HEAD) |
+| ![Build history](https://buildstats.info/appveyor/chart/ProphetLamb/rustic-sharp/?branch=master)                                                                                                |
+
+
 ## Behind the scenes
 
 The library embeds a Homoglyph hash table into its DLL .text section. A specific feature that allows us to load byte sized data is used. If a property exposes a array of `byte` or `sbyte` as a `ReadOnlySpan<byte>`, then the array is not allocation on the heap a 2nd time, but loaded directly from the dll .text section.
