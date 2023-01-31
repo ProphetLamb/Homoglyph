@@ -47,18 +47,15 @@ public static class Homoglyphs {
 
         nuint predictionCount = 0;
         nuint prediction = FastMod(codepoint);
-        nuint probeValue;
         while (true) {
 #if NET6_0_OR_GREATER
-            probeValue = Unsafe.Add(ref hashValues, prediction);
-            if (probeValue == codepoint) {
-                ushort index = Unsafe.Add(ref hashIndicies, prediction);
-                byte length = Unsafe.Add(ref hashLengths, prediction);
+            if (Unsafe.Add(ref hashValues, prediction) == codepoint) {
+                nuint index = Unsafe.Add(ref hashIndicies, prediction);
+                int length = Unsafe.Add(ref hashLengths, prediction);
 #else
-            probeValue = Unsafe.Add(ref hashValues, Unsafe.As<nuint, IntPtr>(ref prediction));
-            if (probeValue == codepoint) {
-                ushort index = Unsafe.Add(ref hashIndicies, Unsafe.As<nuint, IntPtr>(ref prediction));
-                byte length = Unsafe.Add(ref hashLengths, Unsafe.As<nuint, IntPtr>(ref prediction));
+            if (Unsafe.Add(ref hashValues, Unsafe.As<nuint, IntPtr>(ref prediction)) == codepoint) {
+                nint index = Unsafe.Add(ref hashIndicies, Unsafe.As<nuint, IntPtr>(ref prediction));
+                int length = Unsafe.Add(ref hashLengths, Unsafe.As<nuint, IntPtr>(ref prediction));
 #endif
                 return MemoryMarshal.CreateReadOnlySpan(ref Unsafe.Add(ref blockValues, index), length);
             }
