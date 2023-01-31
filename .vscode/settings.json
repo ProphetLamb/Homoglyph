@@ -1,0 +1,6 @@
+{
+	"ltex.language": "en-GB",
+	"cSpell.language": "en",
+	"cSpell.words": ["Homoglyph"],
+	"dotnet-test-explorer.testProjectPath": "**/*.sln"
+}

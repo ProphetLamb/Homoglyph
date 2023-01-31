@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homoglyph", "src\Homoglyph.csproj", "{2276A61E-4D1D-40B7-8F39-A58177FC607F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homoglyph.Test", "test\Homoglyph.Test.csproj", "{6885F0BB-AF80-44AC-BC9A-EC794EE712D5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2276A61E-4D1D-40B7-8F39-A58177FC607F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2276A61E-4D1D-40B7-8F39-A58177FC607F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2276A61E-4D1D-40B7-8F39-A58177FC607F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2276A61E-4D1D-40B7-8F39-A58177FC607F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6885F0BB-AF80-44AC-BC9A-EC794EE712D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6885F0BB-AF80-44AC-BC9A-EC794EE712D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6885F0BB-AF80-44AC-BC9A-EC794EE712D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6885F0BB-AF80-44AC-BC9A-EC794EE712D5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
