@@ -15,6 +15,8 @@ Console.WriteLine(codepoints.Contains(' ') ? "Yay" : "Nope");
 // Output: Yay
 ```
 
+## [API documentation](./doc/Homoglyph/index.md)
+
 ## Behind the scenes
 
 The library embeds a Homoglyph hash table into its DLL .text section. A specific feature that allows us to load byte sized data is used. If a property exposes a array of `byte` or `sbyte` as a `ReadOnlySpan<byte>`, then the array is not allocation on the heap a 2nd time, but loaded directly from the dll .text section.
