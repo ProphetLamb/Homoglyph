@@ -82,24 +82,20 @@ ushort[] hashIndices = new ushort[] { 0, 0, 0, ... };
 byte[] hashIndices = new byte[] { 0, 0, 0, ... };
 
 public static ReadOnlySpan<uint> GetHomoglyphs(uint codepoint) {
-		nuint predictionCount = 0;
-		nuint prediction = FastMod(codepoint);
-		nuint probeValue;
-		while (true) {
-				probeValue = hashValues[prediction];
-				if (probeValue == codepoint) {
-						ushort index = hashIndicies[prediction];
-						byte length = hashLengths[prediction];
-						return blockValues[index..(index + length)];
-				}
-				if (predictionCount <= HashCapacity) {
-						predictionCount += 1;
-						prediction = (prediction + (predictionCount * predictionCount)) % 8419;
-						continue;
-				}
-
-				return default;
+	int prediction = codepoint % 8419;
+	while (true) {
+		if (hashValues[prediction] == codepoint) {
+			ushort index = hashIndicies[prediction];
+			byte length = hashLengths[prediction];
+			return blockValues[index..(index + length)];
 		}
+		if (predictionCount <= HashCapacity) {
+			prediction = (prediction + 1) % 8419;
+			continue;
+		}
+
+		return default;
+	}
 }
 ```
 
