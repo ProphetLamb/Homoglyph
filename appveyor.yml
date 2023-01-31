@@ -62,7 +62,7 @@ deploy:
     draft: true
     username: ProphetLamb
     api_key:
-      secure: C8xC+nv4MSirvCA8kUoan4sz2B8aFaytWW2m4lrLqXhAnSkOmo6fN90QHiGJoSGI
+      secure: P7v2HuFPBS2vc7TqHHbIhZH532SeRFB8J8bKxLBerUOsYg6Ju3ncR/x/VlVhjm+D
     on:
       branch: /release/
 
