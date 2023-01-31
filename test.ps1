@@ -23,7 +23,7 @@ foreach ($coverage in Get-ChildItem -Recurse -File coverage*.xml) {
         }
     }
     # 3. trim $pwd from /CoverageSession/Modules/Module/ModulePath
-    $coverage_xml.CoverageSession.Modules.Module.ModulePath = $coverage_xml.CoverageSession.Modules.Module.ModulePath -replace $dir, ''
+    $coverage_xml.CoverageSession.Modules.Module.ModulePath = $coverage_xml.CoverageSession.Modules.Module.ModulePath -replace [regex]::escape($dir), ''
     # wirte the changes back to the file
     $coverage_xml.Save($coverage.FullName)
 
