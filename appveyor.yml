@@ -48,7 +48,7 @@ test_script:
 
 artifacts:
   - path: 'src\**\Homoglyph.*.nupkg'
-  - path: test\**\coverage.xml'
+  - path: '**\coverage.xml'
 
 deploy:
   - provider: NuGet # Nuget.org
