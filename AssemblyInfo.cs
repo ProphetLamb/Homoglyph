@@ -1,4 +1,4 @@
 using System;
 
 [assembly: CLSCompliant(true)]
-namespace Unidecode;
+namespace Homoglyph;

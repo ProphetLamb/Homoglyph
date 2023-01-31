@@ -4,13 +4,28 @@
 		<TargetFrameworks>netstandard21;net60</TargetFrameworks>
 		<!-- Target 32bit and 64bit platfrom separately. define TARGET_xxBIT -->
 		<Platforms>x86;x64</Platforms>
+		<DeterministicSourcePaths Condition="'$(EnableSourceLink)' == ''">false</DeterministicSourcePaths>
+	</PropertyGroup>
+
+	<PropertyGroup Label="Assembly Info">
+		<Product>
+			Homoglyph</Product>
+		<AssemblyName>$(Product)</AssemblyName>
+		<AssemblyTitle>$(Product)</AssemblyTitle>
+		<PackageId>$(Product)</PackageId>
+		<Title>
+			$(Product)</Title>
+		<Description>Determine homoglyphs for utf-32 codepoints.</Description>
+		<PackageTags>
+			Text;Unicode;UTF-32;Homoglyph</PackageTags>
 	</PropertyGroup>
 
 	<PropertyGroup Condition=" '$(Platform)' == 'x64' ">
 		<DefineConstants>TARGET_64BIT;$(DefineConstants)</DefineConstants>
 	</PropertyGroup>
-	<PropertyGroup Condition=" '$(Platform)' == 'x86' ">
-		<DefineConstants>TARGET_32BIT;$(DefineConstants)</DefineConstants>
+	<PropertyGroup Condition=" '$(Platform)' != 'x64' ">
+		<DefineConstants>
+			TARGET_32BIT;$(DefineConstants)</DefineConstants>
 	</PropertyGroup>
 
 	<ItemGroup>
