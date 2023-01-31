@@ -10,8 +10,8 @@ environment:
     secure: 9I/i+S+EADd9fn7bv9GtXizJbIiorRTIK+O76EE1OaLFVf+K3eWF2pKK6SaK4sY8
 
 cache:
-  - '%LocalAppData%\NuGet\Cache -> **\Rustic*.csproj'
-  - '%LocalAppData%\NuGet\v3-cache  -> **\Rustic*.csproj'
+  - '%LocalAppData%\NuGet\Cache -> **\Homoglyph*.csproj'
+  - '%LocalAppData%\NuGet\v3-cache  -> **\Homoglyph*.csproj'
   - C:\ProgramData\chocolatey\bin -> appveyor.yml
   - C:\ProgramData\chocolatey\lib -> appveyor.yml
   - '%UserProfile%\.dotnet\tools -> appveyor.yml'
@@ -47,7 +47,7 @@ test_script:
   - ps: ./test.ps1
 
 artifacts:
-  - path: 'src\**\Rustic.*.nupkg'
+  - path: 'src\**\Homoglyph.*.nupkg'
 
 deploy:
   - provider: NuGet # Nuget.org
